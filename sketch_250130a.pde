@@ -37,9 +37,13 @@ void setup()
   boid(325,350);
   boid(525,550);
   boidBig(300,300);
+  boidBig(500,200);
+  boidBig(340,500);
+  boidHuge(200,300);
+  boidHuge(500,100);
 }
 
-void boidBig(float x, float y)
+void boidHuge(float x, float y)
 {
   //body
   fill(0, 0, 0);
@@ -49,20 +53,47 @@ void boidBig(float x, float y)
   
   //eyes and mouth
   fill(255, 0, 0);
+  rect(x+6, y-9, 9,5);
+  rect(x-15, y-9, 9,5);
+  rect(x-15, y+4, 30,5);
+  
+  //connection
+  fill(0, 0, 0);
+  rect(x-35, y-20, 2,42);
+  rect(x+32, y-20, 2,42);
+  
+  //hat
+  fill(0, 251, 255);
+  ellipse(x, y-35, 50, 20);
+  rect(x-45, y-35, 90,15);
+  ellipse(x, y+30, 50, 20);
+  rect(x-45, y+15, 90,15);
+}
+
+void boidBig(float x, float y)
+{
+  //body
+  fill(0, 0, 0);
+  circle(x, y, 50);
+  fill(128, 128, 128);
+  circle(x, y, 45);
+  
+  //eyes and mouth
+  fill(255, 0, 0);
   circle(x+10, y-5, 7);
   circle(x-10, y-7, 7);
   rect(x-12, y+7, 25,5);
   
   //connection
-  fill(181, 82, 82);
-  rect(x-22, y-20, 2,40);
-  rect(x+20, y-20, 2,40);
+  fill(255, 0, 0);
+  rect(x-22, y-20, 2,42);
+  rect(x+20, y-20, 2,42);
   
   //hat
-  fill(214, 81, 81);
+  fill(0, 0, 255);
   rect(x-30, y-20, 60,5);
   triangle(x-25, y-20,x+25, y-20, x+2, y-30);
-  triangle(x-30, y+15,x+30, y+15, x+2, y+28);
+  triangle(x-30, y+20,x+30, y+20, x+2, y+30);
 }
 
 void boid(float x, float y)
